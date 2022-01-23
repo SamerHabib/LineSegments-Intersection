@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="Sweepline_v0.Point">
-    <Position X="6.5" Y="1" Width="2" />
+    <Position X="2.25" Y="0.75" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABgAAAAYAA=</HashCode>
       <FileName>Point.cs</FileName>
@@ -9,32 +9,54 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Sweepline_v0.EventPoint">
-    <Position X="4" Y="1" Width="2" />
+    <Position X="2.25" Y="4.25" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAQEAAAABAAA=</HashCode>
       <FileName>EventPoint.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="type" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Sweepline_v0.AVL">
-    <Position X="2.25" Y="0.5" Width="1.5" />
-    <NestedTypes>
-      <Class Name="Sweepline_v0.AVL.Node" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>AVL.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-    </NestedTypes>
+  <Class Name="Sweepline_v0.LineSegment">
+    <Position X="6.5" Y="4.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAIAUAAAEEACAACAAAAgAAAAAAEIQAAAAQBAAACAAAA=</HashCode>
-      <FileName>AVL.cs</FileName>
+      <HashCode>AAAACAAAAAAAQAAAAEAAAAAAAAABAAAAAQEAAAABAAg=</HashCode>
+      <FileName>LineSegment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="startPoint" />
+      <Field Name="type" />
+      <Field Name="endPoint" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sweepline_v0.HeapSort">
+    <Position X="6.5" Y="0.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HeapSort.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sweepline_v0.BinarySearchTree">
+    <Position X="6.5" Y="2.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BinarySearchTree.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Sweepline_v0.EventPointType">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EventPoint.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sweepline_v0.LineType">
+    <Position X="10" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LineSegment.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

@@ -35,49 +35,61 @@ Point p16 = new Point(1, 4);
 
 LineSegment l1 = new LineSegment(p1, p2,0);
 //LineSegment l2 = new LineSegment(p3, p4, 1);
-LineSegment l3 = new LineSegment(p5, p6, 2);
-LineSegment l4 = new LineSegment(p7, p8, 3);
-LineSegment l5 = new LineSegment(p9, p10, 4);
+LineSegment l3 = new LineSegment(p5, p6, 1);
+LineSegment l4 = new LineSegment(p7, p8, 2);
+LineSegment l5 = new LineSegment(p9, p10, 3);
 //LineSegment l6 = new LineSegment(p11, p12, 5);
-LineSegment l7 = new LineSegment(p13, p14, 6);
-LineSegment l8 = new LineSegment(p15, p16, 7);
+LineSegment l7 = new LineSegment(p13, p14, 4);
+LineSegment l8 = new LineSegment(p15, p16, 5);
 //LineSegment l9 = new LineSegment(p17, p18, 8);
 //LineSegment l10 = new LineSegment(p19, p20, 9);
 
-List<LineSegment> lineSegments = new List<LineSegment>() { l1, l3, l4, l5, l7, l8};
+SortedDictionary<int, LineSegment> lineSegments = new SortedDictionary<int, LineSegment>();
+lineSegments.Add(l1.Index, l1);
+lineSegments.Add(l3.Index, l3);
+lineSegments.Add(l4.Index, l4);
+lineSegments.Add(l5.Index, l5);
+lineSegments.Add(l7.Index, l7);
+lineSegments.Add(l8.Index, l8);
+//List<LineSegment> lineSegments = new List<LineSegment>() { l1, l3, l4, l5, l7, l8};
 
 EventPoint[] arr = new EventPoint[lineSegments.Count()*2];
-for(int i=0; i<arr.Count()-1; i += 2)
+for(int i=0; i< lineSegments.Count(); i++)
 {
-    arr[i] = lineSegments[Convert.ToInt32(i / 2)].StartPoint;
-    arr[i+1] = lineSegments[Convert.ToInt32(i / 2)].EndPoint;
+    arr[i*2] = lineSegments[i].StartPoint;
+    arr[(i*2)+1] = lineSegments[i].EndPoint;
 }
 HeapSort.sort(arr);
 
-AVL bTree = new AVL();
+BinarySearchTree map = new BinarySearchTree();
 
-List<EventPoint> list = new List<EventPoint>();
+//List<EventPoint> list = new List<EventPoint>();
 List<Point> intersectionPoints = new List<Point>();
-for(int i = 0; i < arr.Count(); i++)
+
+
+
+
+
+for (int i = 0; i < arr.Count(); i++)
 {
     EventPoint e = arr[i];
     if(e.Type == EventPointType.Insert)
     {
-        if(list.Count()>0)
+        if(map.Count>0)
         {
-            LineSegment ls1 = lineSegments.Where(l => l.Index == e.Index).ToList().First();
-            foreach (EventPoint ep in list)
+            LineSegment ls1 = lineSegments[e.Index];
+            foreach (KeyValuePair<int, EventPoint> kv in map)
             {
-                LineSegment ls2 = lineSegments.Where(l => l.Index == ep.Index).ToList().First();
+                LineSegment ls2 = lineSegments[kv.Key];
                 intersectionPoints.AddRange(Intersection.IsIntersect(ls1, ls2));
             }
         }
 
-        list.Add(e);
+        map.Add(e.Index, e);
     }
     else
     {
-        list.Remove(list.Where(ep => ep.Index == e.Index).ToList().First());
+        map.Remove(e.Index);
     }
 }
 int nnn = 0;
