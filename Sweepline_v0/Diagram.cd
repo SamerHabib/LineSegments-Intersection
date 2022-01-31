@@ -3,7 +3,7 @@
   <Class Name="Sweepline_v0.Point">
     <Position X="2.25" Y="0.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABgAAAAYAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAgAAAAAAAAAAAAIAAAABgAAAAYAA=</HashCode>
       <FileName>Point.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -25,24 +25,26 @@
       <HashCode>AAAACAAAAAAAQAAAAEAAAAAAAAABAAAAAQEAAAABAAg=</HashCode>
       <FileName>LineSegment.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="startPoint" />
-      <Field Name="type" />
-      <Field Name="endPoint" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Sweepline_v0.HeapSort">
-    <Position X="6.5" Y="0.75" Width="3.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>HeapSort.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="Sweepline_v0.BinarySearchTree">
-    <Position X="6.5" Y="2.25" Width="3.25" />
+    <Position X="6" Y="2.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BinarySearchTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sweepline_v0.DangerousAreas">
+    <Position X="6" Y="0.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>DangerousAreas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sweepline_v0.EventPoints">
+    <Position X="10" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAACAAAAAAAAAAAAAAAAAAAAAAAACAEAAAAAAAAA=</HashCode>
+      <FileName>EventPoints.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Sweepline_v0.EventPointType">

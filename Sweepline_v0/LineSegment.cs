@@ -17,6 +17,10 @@ namespace Sweepline_v0
         public EventPoint EndPoint { get { return endPoint; } }
         public LineSegment(Point p, Point q,int i)
         {
+            if(p.Z != q.Z)
+            {
+                throw new Exception("Zs are not valid");
+            }
             index = i;
             type = (p.X == q.X) ? LineType.Vertical : LineType.Horizontal;
             if (p.CompareTo(q) > 0)

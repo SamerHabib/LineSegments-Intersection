@@ -44,7 +44,7 @@ namespace Sweepline_v0
             {
                 if(VerticalLine.StartPoint.X <= horiontalLine.EndPoint.X && VerticalLine.StartPoint.X >= horiontalLine.StartPoint.X)
                 {
-                    return new Point(VerticalLine.StartPoint.X, horiontalLine.StartPoint.Y);
+                    return new Point(VerticalLine.StartPoint.X, horiontalLine.StartPoint.Y, horiontalLine.StartPoint.Z);
                 }
             }
             return null;
@@ -59,7 +59,7 @@ namespace Sweepline_v0
                 int maxX = Math.Min(horiontalLine1.EndPoint.X, horiontalLine2.EndPoint.X);
             
                 for (int x = minX; x <= maxX; x++)
-                    points.Add(new Point(x, y));
+                    points.Add(new Point(x, y, horiontalLine1.StartPoint.Z));
             }
             return points;
         }
@@ -74,7 +74,7 @@ namespace Sweepline_v0
                 int maxY = Math.Min(VerticalLine1.EndPoint.Y, VerticalLine2.EndPoint.Y);
             
                 for (int y = minY; y <= maxY; y++)
-                    points.Add(new Point(x, y));
+                    points.Add(new Point(x, y, VerticalLine1.StartPoint.Z));
             }
             
             return points;

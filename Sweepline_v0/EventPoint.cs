@@ -13,7 +13,7 @@ namespace Sweepline_v0
         private int index;
         public int Index { get { return index; } }
         public EventPointType Type { get { return type; } }
-        public EventPoint(Point p, EventPointType e,int i) : base(p.X,p.Y)
+        public EventPoint(Point p, EventPointType e,int i) : base(p.X,p.Y, p.Z)
         {
             type = e;
             index = i;
@@ -23,7 +23,7 @@ namespace Sweepline_v0
             if (other == null)
                 throw new ArgumentNullException("other can not be NULL");
 
-            List<string> properties = new List<string> { "X", "Y", "Type" };
+            List<string> properties = new List<string> { "X", "Y", "Z", "Type" };
             //List<int> returnValues = new List<int> { 1, -1, 1 };
             foreach (string prop in properties)
             {
